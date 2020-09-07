@@ -27,6 +27,38 @@
 #define DBG_RTW_CFG80211_MESH_CONF 0
 #endif
 
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(3, 10, 0))
+
+enum station_info_flags {
+        STATION_INFO_INACTIVE_TIME      = 1<<0,
+        STATION_INFO_RX_BYTES           = 1<<1,
+        STATION_INFO_TX_BYTES           = 1<<2,
+        STATION_INFO_LLID               = 1<<3,
+        STATION_INFO_PLID               = 1<<4,
+        STATION_INFO_PLINK_STATE        = 1<<5,
+        STATION_INFO_SIGNAL             = 1<<6,
+        STATION_INFO_TX_BITRATE         = 1<<7,
+        STATION_INFO_RX_PACKETS         = 1<<8,
+        STATION_INFO_TX_PACKETS         = 1<<9,
+        STATION_INFO_TX_RETRIES         = 1<<10,
+        STATION_INFO_TX_FAILED          = 1<<11,
+        STATION_INFO_RX_DROP_MISC       = 1<<12,
+        STATION_INFO_SIGNAL_AVG         = 1<<13,
+        STATION_INFO_RX_BITRATE         = 1<<14,
+        STATION_INFO_BSS_PARAM          = 1<<15,
+        STATION_INFO_CONNECTED_TIME     = 1<<16,
+        STATION_INFO_ASSOC_REQ_IES      = 1<<17,
+        STATION_INFO_STA_FLAGS          = 1<<18,
+        STATION_INFO_BEACON_LOSS_COUNT  = 1<<19,
+        STATION_INFO_T_OFFSET           = 1<<20,
+        STATION_INFO_LOCAL_PM           = 1<<21,
+        STATION_INFO_PEER_PM            = 1<<22,
+        STATION_INFO_NONPEER_PM         = 1<<23,
+        STATION_INFO_RX_BYTES64         = 1<<24,
+        STATION_INFO_TX_BYTES64         = 1<<25,
+};
+#endif
+
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(4, 0, 0))
 #define STATION_INFO_INACTIVE_TIME	BIT(NL80211_STA_INFO_INACTIVE_TIME)
 #define STATION_INFO_LLID			BIT(NL80211_STA_INFO_LLID)
