@@ -3234,7 +3234,7 @@ check_need_indicate_scan_done:
 #endif
 
 		_rtw_cfg80211_surveydone_event_callback(padapter, request);
-#if (KERNEL_VERSION(3, 710, 0) <= LINUX_VERSION_CODE)
+#if (KERNEL_VERSION(3, 10, 0) <= LINUX_VERSION_CODE)
 		cfg80211_scan_done(request, &info);
 #else
 		cfg80211_scan_done(request, 0);
