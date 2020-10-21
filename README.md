@@ -10,13 +10,18 @@ tenda U1/U3 module.
 usage:
 
 1. install dmks
+
  yum -y install  epel-release
+ 
  yum -y install  dkms
 
 2. get centos drv src code
 
+
 git clone https://github.com/chuanjinpang/rtl8192eu-linux-driver.git
+
 git branch -a
+
 git checkout -b centos7 remotes/origin/centos7
 
 
