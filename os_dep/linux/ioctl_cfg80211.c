@@ -29,6 +29,7 @@
 
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(3, 10, 0))
 
+#if (RHEL_MINOR == 6 )
 enum station_info_flags {
         STATION_INFO_INACTIVE_TIME      = 1<<0,
         STATION_INFO_RX_BYTES           = 1<<1,
@@ -57,6 +58,7 @@ enum station_info_flags {
         STATION_INFO_RX_BYTES64         = 1<<24,
         STATION_INFO_TX_BYTES64         = 1<<25,
 };
+#endif
 #endif
 
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(4, 0, 0))
