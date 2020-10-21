@@ -1,3 +1,36 @@
+#for centos7.6 rt8192eu usb wifi linux driver
+
+the default centos7.6 doesn't support rt8192eu. however the vendor proivde driver can't use directly.
+need some minor src code modify due to centos 3.10.x kernel update net subsystem individual(seem 4.7.x or higher).
+
+support:
+
+tenda U1/U3 module.
+
+usage:
+
+1. install dmks
+ yum -y install  epel-release
+ yum -y install  dkms
+
+2. get centos drv src code
+
+git clone https://github.com/chuanjinpang/rtl8192eu-linux-driver.git
+git branch -a
+git checkout -b centos7 remotes/origin/centos7
+
+
+3  build it
+
+dkms add .
+dkms install rtl8192eu/1.0
+
+4. over, reboot and just use GUI setting WIFI or other method.
+
+
+-------------------------------------------------------------------
+below is orginal info form fork.
+
 # rtl8192eu linux drivers
 
 **NOTE:** This branch is based on Realtek's driver versioned 4.4.1. `master` is based on 4.3.1.1 originally.
